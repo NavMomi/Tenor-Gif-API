@@ -3,13 +3,12 @@ document.getElementById('button').addEventListener('click', loadUsers);
   var lmt = 12;
   var clientkey = "tenor";
 function loadUsers(){
-
-  let search = $("#search").val();
-
-  var url= "https://tenor.googleapis.com/v2/search?q=" + search + "&key=" +
+  // remove the old search
+  $("img").remove();
+ let search = $("#search").val();
+var url= "https://tenor.googleapis.com/v2/search?q=" + search + "&key=" +
   apikey +"&client_key=" + clientkey +  "&limit=" + lmt;
-
-  var xhttp = new XMLHttpRequest();
+var xhttp = new XMLHttpRequest();
 
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
